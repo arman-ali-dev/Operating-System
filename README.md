@@ -129,7 +129,150 @@ Terminated: Process has finished execution.
     +--------> | Exit   |
                +--------+
 
-### 13. what are the limitations of contiguous memory allocation?
-#### Contiguous Memory Allocation:
-In this method, each process is allocated a single continuous block of memory.
+### 13. what are device drivers? what is it uses?
+A device driver is a software that helps the operating system communicate with hardware devices.
 
+#### Uses:
+
+1. It controls how hardware devices work.
+2. It helps the OS to detect and use the device.
+3. It acts as a link between OS and hardware.
+4. It supports plug-and-play, so devices work easily when connected.
+
+#### Explanation:
+Device driver ek chhoti software hoti hai jo OS aur hardware ke beech connection banata hai. Jaise jab aap mouse ya printer lagate ho, to driver batata hai OS ko ki usse kaise handle karna hai. Agar driver nahi ho, to hardware properly kaam nahi karega. Isse OS ko device ko samajhne aur control karne me aasani hoti hai.
+
+### 14. how linux is diffrent from windows server?
+1. Linux is open-source and free, while Windows Server is paid and closed-source.
+2. Linux mostly uses command-line, while Windows Server has graphical interface by default.
+3. Linux is popular for web servers and development, Windows Server is used in corporate networks.
+4. Linux supports many distributions (like Ubuntu, CentOS), Windows Server has limited versions from Microsoft.
+
+#### Explanation:
+Linux ek free aur open-source system hai jahan user code ko modify kar sakta hai. Isme jyadatar kaam terminal (command line) se hota hai. Web hosting aur programming ke liye use hota hai.
+Windows Server Microsoft ka banaya hua hai, paid hota hai, aur mostly companies ke IT system me use hota hai. Isme GUI hota hai jo beginners ke liye easy hota hai.
+
+### 14. describe the essential properties of the following types of operating system:
+a. Batch <br/> 
+b. time sharing <br/> 
+c. real time 
+
+#### a. Batch Operating System (4 Marks)
+In Batch OS, similar jobs are grouped together and processed without user interaction. The system runs them one after another in a batch.
+
+#### Key Properties:
+
+1. Jobs are collected and executed in batches.
+2. No user interaction during execution.
+3. Suitable for long and repetitive tasks.
+4. Less costly than manual execution.
+
+#### Explanation:
+Batch OS me user directly interact nahi karta. Sabhi similar jobs ko ek sath batch me daal diya jata hai aur wo system automatically run karta hai. Jaise salary process karna, billing reports banana – ek hi type ka kaam ek sath complete hota hai.
+
+#### b. Time-Sharing Operating System (4 Marks)
+In Time-Sharing OS, multiple users can use the computer at the same time. CPU gives each user a small amount of time to run their task.
+
+#### Key Properties:
+
+1. Multiple users work together using time slices.
+2. CPU time is shared among users.
+3. Response time is fast.
+4. Used in systems where many users work together.
+
+#### Explanation:
+Is system me ek hi computer par kai users apna kaam ek sath kar sakte hain. CPU har user ko thoda-thoda time deta hai, isse lagta hai ki sabhi ka kaam ek sath ho raha hai. Jaise ek computer lab me sabhi students same computer system se connected hote hain.
+
+#### c. Real-Time Operating System (RTOS) (4 Marks)
+RTOS is used where tasks must be done within a fixed time. It gives fast and predictable responses to inputs.
+
+#### Key Properties:
+
+1. Works within strict time limits.
+2. Fast and accurate response.
+3. Used in medical, robotics, or aircraft systems.
+4. Supports critical and time-sensitive operations.
+
+#### Explanation:
+RTOS un jagahon par use hota hai jahan delay allowed nahi hota – jaise rocket launch, pacemaker, ya automatic car brakes. Har task ko time ke andar complete karna hota hai, warna system fail ho sakta hai. Isme timing sabse important hoti hai.
+
+### 15. explain different services provided by an operating system and how each provides convenience to the users.
+An operating system provides several key services that help users interact with the computer easily and efficiently. These services include:
+
+#### 1. User Interface (UI):
+What it does: Allows users to interact with the system (CLI or GUI).
+Convenience: GUI makes it easy to click icons and run apps without commands.
+
+#### explanation:
+User Interface help karta hai user ko system ke saath interact karne me. GUI me user easily mouse se kaam kar sakta hai — commands yaad karne ki zarurat nahi hoti.
+
+#### 2. Program Execution:
+What it does: Loads programs into memory and runs them.
+Convenience: Users can easily start apps like browsers, games, etc.
+
+#### explanation:
+Jab bhi user koi program open karta hai, OS usse memory me load karke chalata hai. Ye process user ke liye automatic aur simple bana deta hai.
+
+#### 3. File Management:
+What it does: Manages files on disk (creation, reading, writing, deletion).
+Convenience: Users can organize data into folders and access it easily.
+
+#### explanation:
+OS user ke liye data ko file aur folders me manage karta hai. Jaise Documents, Photos alag-alag folders me save kar sakte ho.
+
+#### 4. Memory Management:
+What it does: Manages RAM by allocating space to programs.
+Convenience: Ensures smooth multitasking without crashes.
+
+#### explanation:
+Jab multiple programs chal rahe hote hain, OS decide karta hai kisko kitni memory mile. Isse system slow nahi hota aur saare programs smoothly chalte hain.
+
+#### 5. Device Management:
+What it does: Controls hardware like printers, keyboards, etc.
+Convenience: User can plug and play devices without any complex setup.
+
+#### explanation:
+Jab aap USB ya printer lagate ho, OS usse detect karke use ready karta hai. User ko kuch manually install nahi karna padta.
+
+#### 6. Security and Protection:
+What it does: Protects system from unauthorized access.
+Convenience: Login system, password protection keeps user data safe.
+
+#### explanation:
+OS user ka data secure karta hai passwords, login systems ke through. Kisi aur ko system access nahi milta bina permission ke.
+
+#### 7. Error Detection and Handling:
+What it does: Finds and fixes system errors.
+Convenience: Shows messages when issues occur and helps solve them.
+
+#### explanation:
+Agar system me koi error hota hai, OS usse detect karta hai aur user ko notify karta hai, jaise “Not Responding” ya “Low Memory” messages.
+
+#### Conclusion:
+These OS services make computers user-friendly, manage resources efficiently, and keep systems secure and responsive.
+
+### 16. explain process synchronization with the help of suitable examples 
+Process synchronization means managing processes so they can run together without interfering with each other, especially when they share resources like files, memory, or printers.
+
+It helps avoid problems like race conditions, where two processes access shared data at the same time and give incorrect results.
+
+####  Why Synchronization is Needed:
+When multiple processes access the same resource, we must make sure only one uses it at a time.
+
+#### Example:
+<b>Bank Account System: <b></br>
+
+Suppose two processes are trying to update the same bank account balance. One is adding ₹500, the other is withdrawing ₹300. Without synchronization, both may read the old balance at the same time, and the final balance may be incorrect.
+
+####  With Synchronization (Using Lock):
+First process locks the account, adds ₹500, unlocks it. Then second process locks, subtracts ₹300, and unlocks. Now the final balance is correct.
+
+#### Common Synchronization Tools:
+1. Semaphore: Used to control access to shared resources.
+2. Mutex (Mutual Exclusion): Only one process enters critical section at a time.
+3. Monitor: High-level structure to handle synchronization easily.
+
+#### explaination
+Process synchronization ka matlab hai – jab 2 ya zyada process ek hi resource (jaise memory, file, account balance) use kar rahe ho, to unko aapas me coordinate karna taaki data kharab na ho.
+
+Agar dono process ek sath balance update kare bina control ke, to result galat aayega. Isliye synchronization tools jaise mutex ya semaphore use hote hain jisse ek process ek time pe kaam kare, doosra wait kare.
