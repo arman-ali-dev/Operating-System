@@ -126,14 +126,13 @@ Terminated: Process has finished execution.
     |               |                    +--------+
     |               v                        |
     |          +--------+ <-----------------+
-    +--------> | Exit   |
+    +--------> |  Exit  |
                +--------+
 
 ### 13. what are device drivers? what is it uses?
 A device driver is a software that helps the operating system communicate with hardware devices.
 
 #### Uses:
-
 1. It controls how hardware devices work.
 2. It helps the OS to detect and use the device.
 3. It acts as a link between OS and hardware.
@@ -150,7 +149,7 @@ Device driver ek chhoti software hoti hai jo OS aur hardware ke beech connection
 
 #### Explanation:
 Linux ek free aur open-source system hai jahan user code ko modify kar sakta hai. Isme jyadatar kaam terminal (command line) se hota hai. Web hosting aur programming ke liye use hota hai.
-Windows Server Microsoft ka banaya hua hai, paid hota hai, aur mostly companies ke IT system me use hota hai. Isme GUI hota hai jo beginners ke liye easy hota hai.
+Windows Server M icrosoft ka banaya hua hai, paid hota hai, aur mostly companies ke IT system me use hota hai. Isme GUI hota hai jo beginners ke liye easy hota hai.
 
 ### 14. describe the essential properties of the following types of operating system:
 a. Batch <br/> 
@@ -276,3 +275,83 @@ First process locks the account, adds ₹500, unlocks it. Then second process lo
 Process synchronization ka matlab hai – jab 2 ya zyada process ek hi resource (jaise memory, file, account balance) use kar rahe ho, to unko aapas me coordinate karna taaki data kharab na ho.
 
 Agar dono process ek sath balance update kare bina control ke, to result galat aayega. Isliye synchronization tools jaise mutex ya semaphore use hote hain jisse ek process ek time pe kaam kare, doosra wait kare.
+
+### 17. what is deadlock? give an appropriate example. Explain the four necessary conditions for deadlock to occur?
+A deadlock is a situation where two or more processes are waiting for each other to release resources, and none of them can continue.
+
+####  Example:
+1. Process A holds Resource 1 and needs Resource 2 to continue.
+2. Process B holds Resource 2 and needs Resource 1.
+3. Both are waiting for each other → this causes deadlock.
+
+####  Real-Life Example (Simple):
+Two people are in a narrow hallway, each blocking the other. Neither moves back, so both are stuck — that’s a deadlock.
+
+#### Four Necessary Conditions for Deadlock:
+##### Mutual Exclusion
+Only one process can use a resource at a time.
+
+##### Hold and Wait
+A process is holding at least one resource and waiting for others.
+
+##### No Preemption
+Resources cannot be forcibly taken from a process.
+
+##### Circular Wait
+A set of processes are waiting on each other in a circular chain.
+
+#### Conclusion:
+If all four conditions are true at the same time, a deadlock can occur. OS must use methods to prevent or handle it.
+
+### 18. what is the need for page replacement? explain LRU page replacement algorithms with the help of an example.
+Page Replacement is needed when a program needs a page that is not in memory (called a page fault), and the memory is already full. So, the system must decide which old page to remove to bring the new one in.
+
+#### Why Page Replacement is Needed?
+1. RAM has limited space.
+2. When all frames are full and a new page is needed, we must replace an old one.
+3. This helps in efficient memory use and allows programs to run smoothly.
+
+#### LRU (Least Recently Used) Algorithm:
+LRU removes the page that has not been used for the longest time. It assumes that pages used recently will likely be used again soon.
+
+#### Explanation:
+Page replacement ki jarurat tab padti hai jab system ki memory full ho aur koi nayi page memory me laani ho. LRU algorithm us page ko hataata hai jo sabse pehle use hua tha – yani jo sabse kam recent tha. Example me, jab 4th page aayi (2), aur memory full thi, to system ne 7 ko hata diya kyunki wo sabse purana tha. Is tareeke se memory efficiently manage hoti hai.
+
+### 19. Explain any two file allocation methods.
+File allocation methods define how files are stored in memory blocks on a disk. Two common methods are:
+
+#### 1. Contiguous Allocation 
+##### Definition:
+In this method, entire file is stored in a single continuous block of memory.
+##### Advantages:
+1. Simple to implement.
+2. Fast access (direct access possible).
+
+##### Disadvantages:
+1. Causes external fragmentation.
+2. Difficult to grow files if space isn’t available after current block.
+
+#### Example:
+If a file needs 4 blocks, it will be stored in blocks 10 to 13 continuously.
+
+#### Explanation:
+Is method me file ko ek saath continuous jagah milti hai disk me. Jaise file ko 4 blocks chahiye, to wo block 5, 6, 7, 8 me save hogi. Simple hai, lekin agar uske baad space na ho to file ko bada karna mushkil hota hai.
+
+#### 2. Linked Allocation
+
+##### Definition:
+In this method, file blocks are scattered anywhere on disk, but each block has a pointer to the next block.
+
+##### Advantages:
+1. No external fragmentation.
+2. Easy to grow file size.
+
+##### Disadvantages:
+1. Slower access (no direct access).
+2. Pointer takes extra space.
+
+#### Example:
+File stored in blocks 5 → 11 → 2 → 8 (each pointing to next).
+
+#### Explanation:
+Is method me file ke blocks kisi bhi jagah ho sakte hain, lekin har block ke andar agle block ka address hota hai. Jaise ek train ke bogie me agle bogie ka number likha ho. Isse space ka achha use hota hai, lekin access thoda slow ho jata hai.
