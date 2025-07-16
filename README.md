@@ -1,5 +1,6 @@
 # Operating-System
-Questions for main exams 
+
+## First Paper: 
 
 ### 1. what is the main reason of designing an operating system?
 #### Definition:
@@ -355,3 +356,122 @@ File stored in blocks 5 → 11 → 2 → 8 (each pointing to next).
 
 #### Explanation:
 Is method me file ke blocks kisi bhi jagah ho sakte hain, lekin har block ke andar agle block ka address hota hai. Jaise ek train ke bogie me agle bogie ka number likha ho. Isse space ka achha use hota hai, lekin access thoda slow ho jata hai.
+
+
+### 20. What are the functions of device management? Explain memory mapped I/O.
+#### Functions of Device Management:
+Device management is a part of the operating system that handles all input/output (I/O) devices like keyboard, mouse, printer, etc.
+
+#### Main Functions:
+##### Device Communication:
+OS manages communication between devices and the CPU.
+
+##### Device Allocation:
+Assigns devices to processes when needed.
+
+##### Device Monitoring:
+Keeps track of which device is busy or free.
+
+##### Error Detection:
+Detects and handles errors in device operations.
+
+##### Driver Interface:
+Uses device drivers to help OS interact with hardware.
+
+#### Memory-Mapped I/O:
+##### Definition:
+In memory-mapped I/O, input/output devices are treated like memory locations. Each device is assigned a memory address.
+
+##### How it works:
+
+The CPU reads/writes to I/O devices using normal memory instructions. No separate I/O instructions are needed.
+
+#### Example:
+Suppose a printer is mapped to address 0x8000. To send data, CPU just writes to that address like it would write to RAM.
+
+####  Explanation:
+Device management ka kaam hai sabhi devices ko manage karna – kab kis process ko kaunsa device mile, kaunsa device free hai, aur agar device fail ho jaye to OS usse handle kare.<br/> <br/>
+Memory-mapped I/O me devices ko memory ke address ki tarah treat kiya jata hai. Jaise aap RAM me value store karte ho, waise hi printer ya display ko bhi ek address assign karke usme data bhej dete ho. Isse CPU ko alag I/O instruction chalane ki zarurat nahi padti – simple memory access se kaam ho jata hai.
+
+### 21. Discuss the features of Linux OS which make it a popular operating system.
+Linux is a popular operating system used worldwide due to its powerful features and flexibility. Some key features are:
+
+#### 1. Open Source:
+Linux is free to use and its source code is open for anyone to view, modify, or improve.
+
+#### 2. Security:
+Linux provides strong user permissions, file security, and fewer chances of getting viruses.
+
+#### 3. Stability and Performance:
+It can run for years without crashing or needing a reboot. It uses system resources efficiently.
+
+#### 4. Multitasking:
+Linux can run many processes at the same time without slowing down the system.
+
+#### 5. Portability:
+Linux runs on almost all hardware platforms — from smartphones to supercomputers.
+
+#### 6. Community Support:
+Millions of developers support Linux, providing updates, fixes, and tutorials.
+
+#### 7. Customizable:
+Users can change the desktop, features, and even the kernel according to their needs.
+
+#### Conclusion:
+Due to its security, speed, free availability, and flexibility, Linux is a favorite among developers, students, and companies.
+
+### 22. explain the file system available in linux.
+A file system defines how data is stored, organized, and accessed on a disk. Linux supports many file systems for different purposes.<br/><br/>
+
+Here are some commonly used file systems in Linux:
+ #### 1. ext2 (Second Extended File System):
+   - Oldest Linux file system.
+   - Does not support journaling.
+   - Still used in USB drives and memory cards.
+
+#### Explaination:
+ext2 simple file system hai, lekin isme crash ke baad data recovery mushkil hoti hai kyunki journaling nahi hoti.
+
+####  2. ext3 (Third Extended File System):
+  - ext2 ka improved version.
+  - Supports journaling (keeps logs of changes for recovery).
+  - More stable and secure.
+
+#### Explaination: 
+ext3 me agar system crash ho jaye to data recover ho sakta hai kyunki ye changes ka record rakhta hai.
+
+#### 3. ext4 (Fourth Extended File System):
+  - Most commonly used Linux file system today.
+  - Faster, supports large files, and very reliable.
+  - Backward compatible with ext3 and ext2.
+
+#### Explaination:
+ext4 sabse advanced aur fast file system hai jo Linux me mostly use hota hai. Ye bade size ke files handle kar sakta hai easily.
+
+#### 4. XFS:
+  - High-performance file system.
+  - Best for handling large files and high-speed data transfer.
+  - Often used in servers and enterprise systems.
+
+#### Explaination: 
+XFS large data aur fast operations ke liye design kiya gaya hai — jaise video editing, database servers me use hota hai.
+
+#### 5. Btrfs (B-tree File System):
+  - Advanced features like snapshots, compression, and error detection.
+  - Still under development but powerful.
+
+#### Explaination: 
+Btrfs ek modern file system hai jo data ko auto-repair, compress aur snapshot ke saath manage karta hai. Future me zyada use ho sakta hai.
+
+#### 6. Swap File System:
+  - Used for virtual memory (acts as extra RAM).
+  - Not used for storing files, but helps in performance.
+
+#### Explaination: 
+Swap space system me RAM kam padne par kaam aata hai — jaise memory full ho to ye temporary RAM ki tarah kaam karta hai.
+
+#### Conclusion:
+Linux offers multiple file systems for different needs — ext4 for general use, XFS for large files, and Btrfs for advanced features.
+
+
+## Second Paper:
