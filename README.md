@@ -747,3 +747,32 @@ Similar to acyclic graph but cycles are allowed. May require garbage collection 
 #### How a file can be protected?
 A file can be protected by controlling how users access it. Protection ensures that only authorized users can read, write, or execute a file. File protection prevents accidental or malicious modifications or deletions.
 
+#### Various Protection Mechanisms:
+##### 1. Access Control (Permission-based):
+  - Every file has permissions (read, write, execute) for three types of users:
+  - Owner (User)
+  - Group
+  - Others
+  - Example in Linux: rwxr--r-- → Owner can read/write/execute, group and others can only read.
+
+##### 2. Password Protection:
+Files are locked with passwords. Only users who know the password can access the file. This is a basic level of security and not very scalable.
+
+##### 3. Encryption:
+File contents are encoded using encryption algorithms. Only authorized users with the correct decryption key can access the data. Very secure, especially for sensitive information.
+
+##### 4. User Authentication:
+Operating system ensures that only authenticated (logged-in) users can access certain files. This is tied with user accounts and access levels.
+
+##### 5. File Attributes (Read-Only, Hidden, System):
+Files can be marked as read-only to prevent modifications. Hidden files are not visible to casual users. System files are protected from changes to maintain OS stability.
+
+
+##### 6. Backup and Versioning:
+Files are periodically backed up. Versioning allows rollback to a previous safe state if tampered or corrupted.
+
+##### 7. Audit and Monitoring:
+Tracks access and changes to files. Helps detect unauthorized access and take necessary action.
+
+#### Conclusion:
+By combining multiple protection mechanisms like permissions, encryption, authentication, and monitoring, file security is ensured against unauthorized access and corruption.
