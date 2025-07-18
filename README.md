@@ -708,3 +708,42 @@ Deadlock detect karne ka matlab hai check karna ki system me koi aisi situation 
 1. Single Program Partition – Poori memory sirf ek hi program ke liye hoti hai. Jab tak ek program complete nahi hota, doosra run nahi ho sakta. Bohot simple hai lekin memory ka waste hota hai.
 2. Fixed-Sized Partitioning – Memory ko barabar hisson me baant diya jaata hai (fixed size). Har partition me ek hi program aa sakta hai. Agar program chhota ho to bachi hui memory waste ho jaati hai (internal fragmentation).
 3. Variable-Sized Partitioning – Memory ko alag-alag size ke parts me divide kiya jaata hai jaisa program ka requirement ho. Ye zyada efficient hai, lekin kabhi-kabhi memory ke beech me khaali space bach jaata hai (external fragmentation), jise remove karne ke liye compaction ki zarurat padti hai.
+
+### 19. Explain Various 'Page Replacement Algorithms' in brief with the help of suitable example of each.
+####  What is a Page Replacement Algorithm?
+When a page fault occurs (i.e., the required page is not in memory), the operating system needs to bring that page into memory. If memory is full, it must replace an existing page — this is where Page Replacement Algorithms come in.
+
+##### 1. FIFO (First-In-First-Out)
+Concept: Replace the page that has been in memory the longest.
+
+##### 2. LRU (Least Recently Used)
+Concept: Replace the page that was least recently used.
+
+##### 3. Optimal (OPT)
+Concept: Replace the page that won’t be used for the longest time in future.
+
+##### 4. Clock (Second Chance)
+Concept: Like FIFO, but gives each page a second chance using a reference bit.
+
+### 20. Explain the various types of directories systems with the help of suitable examples of each.
+Operating systems organize files in directories to manage and access them efficiently. There are several types of directory systems:
+
+#### 1. Single-Level Directory:
+All files are stored in one single directory. Suitable for small systems with one user.
+
+#### 2. Two-Level Directory:
+There is a separate directory for each user. Users cannot access others’ files directly.
+
+#### 3. Tree-Structured Directory:
+Allows users to create subdirectories inside directories. It forms a hierarchical (tree) structure.
+
+#### 4. Acyclic Graph Directory:
+Files and directories can be shared among users. Implemented using links or shortcuts.
+
+#### 5. General Graph Directory:
+Similar to acyclic graph but cycles are allowed. May require garbage collection to manage deleted files.
+
+### 21. How a file can be protected? Discuss various protection mechanism used for protecting files.
+#### How a file can be protected?
+A file can be protected by controlling how users access it. Protection ensures that only authorized users can read, write, or execute a file. File protection prevents accidental or malicious modifications or deletions.
+
