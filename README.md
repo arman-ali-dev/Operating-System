@@ -646,3 +646,65 @@ Schedulers ka kaam hota hai ki kaunsi process CPU pe chalegi, aur system me proc
   - (c) Medium-term Scheduler: Agar system overload ho jaye to ye kuch processes ko memory se nikal kar suspend kar deta hai. Jab system free ho jata hai to inhe resume karta hai.
 
 ### 15. Explain various preemptive scheduling mechanisms in detail.
+#### What is Preemptive Scheduling?
+Preemptive Scheduling is a CPU scheduling method in which the currently running process can be interrupted and the CPU can be allocated to another higher priority process. It is based on priority, time, or remaining execution time. This makes the system more responsive and efficient, especially for real-time or interactive environments.
+
+#### Types of Preemptive Scheduling Algorithms:
+
+##### 1. Round Robin (RR) -
+Time Quantum: Each process gets a fixed time to execute (like 2ms or 4ms). If a process doesn’t finish in its quantum, it is preempted and moved to the back of the queue. The next process is then scheduled.
+
+### 16. How can a deadlock situation ne avoided? Discuss.
+Deadlock can be avoided by making sure that at least one of the four necessary conditions of deadlock does not occur. We can use methods like Banker's Algorithm or Resource Allocation Graph to avoid deadlock.
+
+#### Explaination:
+Deadlock ek aisi situation hoti hai jisme multiple processes ek dusre ke resources ka wait karte hue ruk jaate hain, aur koi bhi process aage nahi badh pata. Isse avoid karne ke liye hume deadlock ke 4 conditions me se kam se kam ek ko break karna padta hai:
+
+##### 1. Mutual Exclusion:
+Sabhi resources ko exclusive access dena zaroori nahi. Kuch resources ko shareable banakar is condition ko tod sakte hain.
+
+##### 2. Hold and Wait:
+Process ek resource hold kar raha ho aur dusre ka wait kar raha ho — isse avoid karne ke liye, process ko sabhi resources ek hi baar allocate karo ya kuch bhi na do jab tak sab ready na ho.
+
+##### 3. No Preemption:
+Resource forcibly kisi aur process se le lo jab zarurat ho, toh deadlock avoid ho sakta hai.
+
+##### 4. Circular Wait:
+Ek circular chain jisme har process ek dusre ka resource hold kar raha ho — agar hum sabhi resources ko ek fixed order me allocate karein, toh ye condition break ho jaati hai.
+
+#### Algorithms:
+##### Banker's Algorithm:
+Pehle check karta hai ki agar resource diya jaaye toh system safe state me rahega ya nahi.
+
+##### Resource Allocation Graph:
+Resource-process graph me cycle detect karke hum deadlock avoid kar sakte hain.
+
+### 17. How to detect a 'Deadlock'? Explain.
+A deadlock can be detected by checking if there is a circular wait among the processes. We use Resource Allocation Graph (RAG) or Deadlock Detection Algorithm to find if a deadlock has occurred.
+
+#### Explaination:
+Deadlock detect karne ka matlab hai check karna ki system me koi aisi situation hai ya nahi jahan processes ek dusre ke resources ka wait kar rahe hain aur koi bhi process aage nahi badh paa raha. Iske liye kuch popular methods hain:
+
+### 18. Discuss 'Single Program Partition', 'Fixed-Sized Partitioning' and 'Variable Sized Partition' memory allocation techniques  in brief.
+
+#### Single Program Partition:
+  - In this technique, the entire memory is allocated to a single program.
+  - No other program can be loaded until the current one finishes.
+  - It is simple but wasteful, as it doesn’t allow multitasking.
+
+#### Fixed-Sized Partitioning:
+  - Memory is divided into equal-sized fixed partitions.
+  - Each partition can hold only one program at a time.
+  - If the program is smaller than the partition, memory is wasted (called internal fragmentation).
+  - Easy to manage, but not flexible for different program sizes.
+
+#### Variable-Sized Partitioning:
+  - Memory is divided into partitions of different sizes depending on the program's requirement.
+  - More efficient use of memory.
+  - It may lead to external fragmentation (free space between allocated partitions).
+  - Requires compaction to handle fragmentation.
+
+#### Explaination:
+1. Single Program Partition – Poori memory sirf ek hi program ke liye hoti hai. Jab tak ek program complete nahi hota, doosra run nahi ho sakta. Bohot simple hai lekin memory ka waste hota hai.
+2. Fixed-Sized Partitioning – Memory ko barabar hisson me baant diya jaata hai (fixed size). Har partition me ek hi program aa sakta hai. Agar program chhota ho to bachi hui memory waste ho jaati hai (internal fragmentation).
+3. Variable-Sized Partitioning – Memory ko alag-alag size ke parts me divide kiya jaata hai jaisa program ka requirement ho. Ye zyada efficient hai, lekin kabhi-kabhi memory ke beech me khaali space bach jaata hai (external fragmentation), jise remove karne ke liye compaction ki zarurat padti hai.
